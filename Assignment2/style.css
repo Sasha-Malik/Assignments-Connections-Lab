@@ -43,6 +43,7 @@ a{
     display:flex;
     flex-direction: column;
     justify-content: center; 
+    align-items: center;
 
 }
 
@@ -59,7 +60,6 @@ img{
 
 .content1{
     position: relative;
-    left:30px;
     top:40px;
     height: 600px;
     width:1400px;
@@ -89,7 +89,6 @@ img{
 .content2{
     position: relative;
     top:5px;
-    left : 120px;
     height:100px;
     width :1200px;
     font-size:18px;
@@ -100,7 +99,7 @@ img{
 }
 .footer{
     position: relative;
-    width :102%;
+ 
     height:40px;
     background-color: black;
     display:flex;
