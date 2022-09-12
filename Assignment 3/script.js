@@ -31,6 +31,7 @@ next.addEventListener( 'click',() => {
 let slide = document.getElementsByClassName("slide");
 slide[0].style.display = "flex";
 
+
 /* Faq List */
 
 let ans = document.getElementsByClassName("answer");
@@ -101,5 +102,41 @@ ques.forEach(element => {
     });
     
 });
+
+/* Adding comments */
+
+function add(value){ 
+
+    const div = document.createElement('div');
+    div.classList.add('play');
+    div.textContent = value;
+
+    const container = document.querySelector('.container5');
+    container.appendChild(div);
+}
+
+let counter = 0;
+
+window.addEventListener("load", () => {
+
+    let inputBox = document.getElementById("sentence");
+
+    inputBox.addEventListener("change", (e) => {
+    
+
+    console.log(e.target.value);
+
+    if(counter<5)
+        {
+            add(e.target.value);
+            counter++;
+        }
+
+    inputBox.value = "";
+
+    });
+
+});
+
 
 
