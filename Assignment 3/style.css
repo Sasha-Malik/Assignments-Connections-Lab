@@ -37,7 +37,7 @@ body{
     width:70px;
 }
 
-.info{
+.infoB{
     height: 36px;
     width:80px;
 }
@@ -216,4 +216,49 @@ button{
 .footer{
     background-color: #1F2937;
     height: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:70px;
+   
 }
+
+.footer1{
+    display:flex;
+    align-items: center;
+    justify-content: left;
+
+    margin-top:80px;
+    width:100%;
+}
+
+.contact, .moreInformation{
+    display: flex;
+    flex-direction: column;
+    color:aliceblue;
+    margin-left: 100px;
+}
+.contactUs, .info{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 40px;
+
+}
+
+.contactUs{
+    margin-bottom: 55px;
+}
+
+.contacts , .infoLinks{
+    text-decoration: none;
+    color: aliceblue;
+    margin:8px;
+}
+
+.footer{
+    color: aliceblue;
+}
+
+
+
