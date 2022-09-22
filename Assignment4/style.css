@@ -1,0 +1,21 @@
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height:700px;
+    width:500px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+        height: 100px;
+        width:150px;
+        border-radius: 12px;
+        background-color: black;
+        color: white;
+}
