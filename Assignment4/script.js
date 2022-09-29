@@ -89,12 +89,15 @@ button2.addEventListener('click', ()=>{
 	if(check1 == 1 && check2 == 1 )
 	{
 		let count1 = 0;
-		let coun2 = 0;
+		
 
 		for(let i = 0 ; i < hightCompatibility1.length ; i++)
 		{
 			if(person1 == hightCompatibility1[i] || person2 == hightCompatibility1[i])
 			count1++;
+
+			else if(person1 == hightCompatibility1[i] && person2 == hightCompatibility1[i])
+			coun1+=2;
 		}
 
 		if(count1 >= 2 && checkBreak!= -1)
@@ -127,7 +130,7 @@ button2.addEventListener('click', ()=>{
 
  
 let personalities = ["ESTJ" , "ENTJ", "ESFJ", "ENFJ", "ISTJ", "ISFJ", "INTJ", "INFJ", "ESTP", "ESFP", "ENTP", "ENFP", "ISTP", "ISFP", "INTP" , "INFP"];
-let hightCompatibility1 = ["ISTJ", "ESTJ", "ISFJ", "ESFJ" , "INFP", "ENFP", "INFJ", "ENFJ"];
+let hightCompatibility1 = ["ISTJ", "ESTJ", "ISFJ", "ESFJ" , "INFP", "ENFP", "INFJ", "ENFJ", "ESTP", "INTP" ];
 
 
 //sketch
