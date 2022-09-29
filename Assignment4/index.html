@@ -4,15 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href="style.css">
+    <title>Personality Test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class = "mainContainer">
+        <div class = "header"> 
+           <div class=" heading"> Personality Test </div>
+            <div class = "buttons"> 
+                <button class = "signIn"> Sign in </button>
+                <button class = "register"> Register </button>
+                <button class = "infoB"> More Info </button>
+                <button class = "settings"> Settings </button>
+                <button class = "help"> Help </button>
+            </div>
+        </div>
+        <div class = "content">
 
-    <div class = "container">
-        <button class = "btn">Button</button>
-    </div>  
-    
-    <script src = "script.js"></script>
+            <div class="content1">
+                <div id="canvas-container"></div>
+            </div>
+            
+            <div class = "compatibility"></div>
+
+            <div class = "description"> Take a free 10 minute test to discover your compatibility with a friend!</div>
+
+            
+            <div class = "content2">
+
+
+                <form id="quiz">
+                    
+                    <h1>Select the options you relate to:
+                                  (Person 1)
+                    </h1>
+
+                    <button type = "reset" class = "submit">Submit Your Answers</button>
+                    <button type="submit">Reset</button></br>
+                   
+                </form>
+
+
+                  <form id="quiz2">
+                    
+                    <h1>Select the options you relate to:
+                             (Person 2)
+                    </h1>
+
+                    <button type = "reset" class = "submit2">Submit Your Answers</button>
+                    <button type="submit">Reset</button></br>
+                   
+                  </form>
+               
+            </div>
+
+            <div class = "results">
+                <h2>Results</h2>
+                <div class = "resultCont">
+
+                </div>
+            </div>
+
+            <a class = " plink" href = "https://www.16personalities.com/personality-types">To know more about your personality-types!</a>
+
+        </div>
+        <div class = "footer">
+
+            <div class = "footer1">
+                <div class = "contact"> 
+                    <div class = "contactUs">Contact us</div>
+                    <a class = "contacts" href = "#">Facebook</a>
+                    <a class = "contacts" href = "#">Instagram</a>
+                    <a class = "contacts" href = "#">Gmail</a>
+                    <a class = "contacts" href = "#">Twitter</a>
+                </div>
+      
+                <div class = "moreInformation"> 
+                    <div class = "info">More Info</div>
+                    <a class = "infoLinks" href = "#">Random Links</a>
+                    <a class = "infoLinks" href = "#">Random Links</a>
+                    <a class = "infoLinks" href = "#">Random Links</a>
+                    <a class = "infoLinks" href = "#">Random Links</a>
+                </div>
+
+            </div>
+
+            <div class = "footer2"> 
+                <div class = " foot">Copright © Project 1- Conections - Lab</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+
+
 </body>
 </html>
