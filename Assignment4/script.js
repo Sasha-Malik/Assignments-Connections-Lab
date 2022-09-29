@@ -58,6 +58,8 @@ let check = 0;
 let check1 = 0;
 let check2 = 0;
 
+let checkBreak = 0;
+
 let person1 = "null";
 let person2 = "null";
 
@@ -82,7 +84,7 @@ button2.addEventListener('click', ()=>{
 	person2 = personalities[Math.floor(Math.random() * 16)];
 	textResults.innerHTML = person2;
 	result.appendChild(textResults);
-		check2 = 1;
+	check2 = 1;
 
 	if(check1 == 1 && check2 == 1 )
 	{
@@ -95,8 +97,9 @@ button2.addEventListener('click', ()=>{
 			count1++;
 		}
 
-		if(count1 >= 2 )
+		if(count1 >= 2 && checkBreak!= -1)
 		{
+			 checkBreak = -1;
 			check = 2;
 			let comp = document.querySelector('.compatibility');
 			let x = document.createElement('div');
@@ -105,9 +108,10 @@ button2.addEventListener('click', ()=>{
 			comp.appendChild(x);
 		}
 
-		else
+		else if(checkBreak!= -1)
 		{
 			check = 1;
+			checkBreak = -1;
 			let comp = document.querySelector('.compatibility');
 			let x = document.createElement('div');
 			x.setAttribute('class','comp');
