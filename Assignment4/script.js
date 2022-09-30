@@ -40,8 +40,6 @@ window.addEventListener('load', function() {
 	.then((response) => response.json())
 	.then((data) => {
 
-		//console.log(data.responses);
-
 		for (let index = 0; index < 90; index++)
 		{
 			addResponse(data.responses[index]);
