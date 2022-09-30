@@ -1,4 +1,4 @@
-
+//loading the responses to quiz1
 function addResponse( textValue ){
 
 	let parent = document.querySelector('#quiz');
@@ -16,6 +16,7 @@ function addResponse( textValue ){
 	parent.appendChild(newElem);
 }
 
+//loading the responses to quiz2
 function addResponse2( textValue ){
 
 	let parent = document.querySelector('#quiz2');
@@ -33,8 +34,7 @@ function addResponse2( textValue ){
 	parent.appendChild(newElem);
 }
 
-
-
+//getting the response form the .json file
 window.addEventListener('load', function() {
 	fetch('responses.json')
 	.then((response) => response.json())
@@ -50,17 +50,19 @@ window.addEventListener('load', function() {
 	});
 })
 
-
 let check = 0;
 
+// checking if both the submit buttons have been clicked before adding the combatibility visualisation
 let check1 = 0;
 let check2 = 0;
 
+//checking if both buttons have already been clicked so that we don't change the visualisation again after submitting multiple times
 let checkBreak = 0;
 
 let person1 = "null";
 let person2 = "null";
 
+//submit button 1
 let button = document.querySelector(".submit");
 button.addEventListener('click', ()=>{
 
@@ -72,8 +74,7 @@ button.addEventListener('click', ()=>{
 		check1 = 1;
 });
 
-
-
+//submit button 2
 let button2 = document.querySelector(".submit2");
 button2.addEventListener('click', ()=>{
 
@@ -84,11 +85,12 @@ button2.addEventListener('click', ()=>{
 	result.appendChild(textResults);
 	check2 = 1;
 
+	//if both buttons have been clicked
 	if(check1 == 1 && check2 == 1 )
 	{
 		let count1 = 0;
-		
 
+		//checking if the people are in highcompatibility (array)
 		for(let i = 0 ; i < hightCompatibility1.length ; i++)
 		{
 			if(person1 == hightCompatibility1[i] || person2 == hightCompatibility1[i])
@@ -98,6 +100,8 @@ button2.addEventListener('click', ()=>{
 			coun1+=2;
 		}
 
+		//if they are both in highcompatibility
+		//checkBreak is not -1 when they are both submitted the first time
 		if(count1 >= 2 && checkBreak!= -1)
 		{
 			 checkBreak = -1;
@@ -109,6 +113,8 @@ button2.addEventListener('click', ()=>{
 			comp.appendChild(x);
 		}
 
+		//if they are not both (they will be moderately compatible)
+		//checkBreak is not -1 when they are both submitted the first time
 		else if(checkBreak!= -1)
 		{
 			check = 1;
@@ -125,14 +131,12 @@ button2.addEventListener('click', ()=>{
 });
 
 
-
- 
+ //all personalities
 let personalities = ["ESTJ" , "ENTJ", "ESFJ", "ENFJ", "ISTJ", "ISFJ", "INTJ", "INFJ", "ESTP", "ESFP", "ENTP", "ENFP", "ISTP", "ISFP", "INTP" , "INFP"];
 let hightCompatibility1 = ["ISTJ", "ESTJ", "ISFJ", "ESFJ" , "INFP", "ENFP", "INFJ", "ENFJ", "ESTP", "INTP" ];
 
 
 //sketch
-
 
 function setup() {
 
@@ -145,11 +149,9 @@ function setup() {
 
 	background('#000000');
 
-
-  
+  // to change the visualisation for highly compatible
 	if(check == 2)
 	{
-		//orbitControl();
 		translate(0,-50,0);
 	  
 		rotateZ(frameCount * 0.015);
@@ -162,6 +164,7 @@ function setup() {
 		sphere(70);
 	}
 
+	// to change the visualisation for moderately compatible
 	else if(check == 1)
 	{
 		translate(0,-150,0);
@@ -176,6 +179,7 @@ function setup() {
 		sphere(70);
 	}
 
+	//the visualisation when the page loads
 	else
 	{
 	rotateZ(frameCount * 0.01);
