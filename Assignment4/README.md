@@ -8,6 +8,8 @@ Link : https://sasha-malik.github.io/Assignments-Connections-Lab/Assignment4/
 This project allows the users to test their compatibility with a friend based on their respective personalities. The personalities are obtained by answering a short 10 minute questionnaire, after which each user can see their personalities (based on the 16 personality distribution) as well as their compatibility with each other.
 The project incorporates p5.js to visualise the orbs (one for each person) and their compatibility. The responses for the questionnaire come from a json file obtained using js fetch() from Sentino API.
 
+A web application for teenagers to check their compatibility with their friends and partners, giving them more insights into different personality types and getting along with them!
+
 
 ## User Interaction
 
