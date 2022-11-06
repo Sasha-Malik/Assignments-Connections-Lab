@@ -96,6 +96,18 @@ body{
     margin: 20px;
 }
 
+.pollContainer{
+    height: 600px;
+    width: 1000px;
+    border:2px solid rgb(191, 191, 191);
+    display: flex;
+    flex-direction: column;
+    padding:50px;
+    gap:20px;
+    overflow: scroll;
+    border-radius: 8px;
+}
+
 .commentContainer{
     height: 600px;
     width: 1000px;

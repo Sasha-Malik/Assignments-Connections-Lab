@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Search</title>
     <link rel = "stylesheet" href = "style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
     <script src="socket.io/socket.io.js"></script>
     <script src = "app.js"></script>
@@ -18,10 +19,7 @@
         <div class = "header">
             <div class = "heading"> Course Search</div>
         </div>
-
-
         <div class = "search">
-
             <form class = "textBox">
                 <input type= "text" class = "textValue" id = "textVal"/>
             </form>
@@ -46,7 +44,10 @@
 
         <div class = "eachContainer">
             <div class = "courseHeading">
+            </div>
 
+            <div class="pollContainer">
+                <canvas height="50" id="myChart"></canvas>
             </div>
 
             <div class = "commentContainer">
@@ -54,11 +55,9 @@
             </div>
 
             <div class = "searchComment">
-
                 <form class = "textBoxCommment">
                     <input type= "text" class = "textValueComment" id = "textValComment"/>
                 </form>
-    
                 <button class = "btnComment"> Submit </button>
     
             </div>
@@ -96,4 +95,59 @@
    
    
 </body>
+
+<script>
+    const labels = [
+      'Very Easy',
+      'Easy',
+      'Average',
+      'Hard',
+      'Very Hard',
+    ];
+  
+    const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Very Easy',
+    data: [65, 59, 80, 81, 56],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+    ],
+    borderWidth: 1
+  }]
+};
+  
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+  </script>
+
+<script>
+    const myChart1 = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    console.log(window.location.pathname);
+    
+</script>
 </html>
