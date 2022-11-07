@@ -2,8 +2,13 @@ let express = require("express");
 let app = express();
 
 let Datastore = require("nedb");
+
 let db = new Datastore("course.db");
+let db2 = new Datastore("poll.db");
+
+
 db.loadDatabase();
+db2.loadDatabase();
 
 app.use('/', express.static('public'));
 
@@ -36,18 +41,47 @@ app.get('/comments', (req,res)=>{
 
 });
 
+app.get('/polls', (req,res)=> {
+
+    let c = req.query.selectedCourse;
+    db2.find({courseName : c}).sort({ updateAt: 1 }).exec(function (err, docs) {
+        if(err) {
+            res.json({task: "task failed"})
+        } else {
+            let obj = {poll : docs};
+            res.json(obj);
+            console.log(obj)
+        }
+        });
+});
 
 io.sockets.on('connection', function(socket) {
     console.log("We have a new client: " + socket.id);
     
-    socket.on('data', (data)=>{
+    socket.on('data', (data)=>{     // Listening for comment data values
 
         console.log(data);
         db.insert(data, (err, newDoc)=>{
-            //console.log(newDoc);
+            console.log(newDoc);
+            console.log(err);
         });
 
         io.sockets.emit('sdata',data);
+    })
+
+
+    socket.on('poll', (polldata)=>{ // Listening for poll values
+
+        console.log(polldata);
+        db2.insert(polldata, (err, newDoc)=>{
+            if(err)
+            {
+                console.log(err.message);
+            }
+            //console.log(newDoc);
+        });
+
+        io.sockets.emit('polldata',polldata);   //Send poll data to all the data in the server
     })
 
     //Listen for this client to disconnect
