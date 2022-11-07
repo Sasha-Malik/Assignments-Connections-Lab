@@ -6,12 +6,12 @@ let Datastore = require("nedb");
 let db = new Datastore("course.db");
 let db2 = new Datastore("poll.db");
 
+let courseList = ["a","Algorithms","Data Structures","Calculus","Markets","Connections Lab","Linear Algebra"];
 
 db.loadDatabase();
 db2.loadDatabase();
 
 app.use('/', express.static('public'));
-
 
 
 let http = require("http");
@@ -24,6 +24,10 @@ server.listen( 3000 , ()=> {
 
 let io = require("socket.io");
 io = new io.Server(server);
+
+app.get('/courses', (req,res)=>{
+    res.json({courseArray : courseList });
+});
 
 
 app.get('/comments', (req,res)=>{
@@ -40,6 +44,7 @@ app.get('/comments', (req,res)=>{
       });
 
 });
+
 
 app.get('/polls', (req,res)=> {
 
@@ -81,7 +86,7 @@ io.sockets.on('connection', function(socket) {
             //console.log(newDoc);
         });
 
-        io.sockets.emit('polldata',polldata);   //Send poll data to all the data in the server
+        io.sockets.emit('polldata',polldata);   
     })
 
     //Listen for this client to disconnect

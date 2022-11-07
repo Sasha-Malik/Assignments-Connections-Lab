@@ -58,11 +58,10 @@ body{
 .courseWindow{
     height: 600px;
     width: 1000px;
-    border:2px solid black;
     display: flex;
     flex-wrap: wrap;
     padding:50px;
-    gap:50px;
+    gap:40px;
     overflow: scroll;
     border-radius: 8px;
 }
@@ -70,8 +69,14 @@ body{
 .course{
     height: 200px;
     width: 200px;
-    border:2px solid black;
     border-radius: 8px;
+    display: flex;
+    background-color: lightcoral;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    border-color: lightcoral;
 }
 
 
