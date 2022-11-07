@@ -6,13 +6,20 @@ socket.on('connect', function() {
 
 window.addEventListener('load', ()=>{
 
+
+    let courseName = "";
+
+    socket.on( 'sdata' , (data)=> {
+        addMessage(data.comment);
+    });
+
+
     fetch('/courses')
     .then(res => res.json())
     .then(data => {
 
   
         let container = document.querySelector(".courseWindow");
-
 
         data.courseArray.forEach(e =>{
 
@@ -22,8 +29,8 @@ window.addEventListener('load', ()=>{
             
             child.addEventListener('click', ()=>{
 
-                let text = child.innerHTML;
-                showComments(text);
+                courseName = child.innerHTML;
+                showComments(courseName);
 
             });
 
@@ -42,17 +49,9 @@ window.addEventListener('load', ()=>{
     function handleForm(event) { event.preventDefault(); } 
 
 
-    socket.on( 'sdata' , (data)=> {
-        addMessage(data.comment);
-    });
-
-
-
     let btn = document.querySelector(".btn");
 
         btn.addEventListener("click",()=>{
-
-            let courseName = "";
 
             let textVal = document.getElementById("textVal")
             courseName = textVal.value;
@@ -65,30 +64,31 @@ window.addEventListener('load', ()=>{
     let button = document.querySelector('.btnComment');
     button.addEventListener('click',()=>{
 
-        let text = document.getElementById("textValComment");
-        //addMessage(text.value);
+            let text = document.getElementById("textValComment");
 
-        let commentObj = {
-            "courseName" : courseName,
-            "comment" : text.value,
-            "updateAt" : new Date()
-            };
+            if(text.value != "")
+            { 
+                let commentObj = {
+                "courseName" : courseName,
+                "comment" : text.value,
+                "updateAt" : new Date()
+                };
+              
+                socket.emit('data',commentObj);
 
-            let commentObjJSON = JSON.stringify(commentObj);
-            socket.emit('data',commentObj);
-
+            }
+           
     });
 
 
     let pollsubmit = document.querySelector('.pollsubmitbtn');
     pollsubmit.addEventListener('click',()=> {
+
         let wpoll = document.getElementById("workload").value;
         let gpoll = document.getElementById("grading").value;
         let epoll = document.getElementById("exams").value;
         let cpoll = document.getElementById("content").value;
         let ppoll = document.getElementById("professor").value;
-
- 
 
         let pollObj = {
             "courseName" : courseName,
@@ -129,7 +129,7 @@ function removeMessages(){
 }
 
 function showComments(courseName){
-    
+
             removeMessages();
 
             let courseWindow = document.querySelector('.courseContainer');
@@ -151,6 +151,7 @@ function showComments(courseName){
             .then(data =>{
 
                 let arr = data.comments;
+                //console.log(arr);
                 arr.forEach(e => {
                     addMessage(e.comment);    
                 });

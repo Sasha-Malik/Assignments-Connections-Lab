@@ -37,7 +37,8 @@ app.get('/comments', (req,res)=>{
     db.find({courseName : c}).sort({ updateAt: 1 }).exec(function (err, docs) {
         if(err) {
             res.json({task: "task failed"})
-        } else {
+        } 
+        else {
             let obj = {comments: docs};
             res.json(obj);
         }
@@ -52,7 +53,8 @@ app.get('/polls', (req,res)=> {
     db2.find({courseName : c}).sort({ updateAt: 1 }).exec(function (err, docs) {
         if(err) {
             res.json({task: "task failed"})
-        } else {
+        } 
+        else {
             let obj = {poll : docs};
             res.json(obj);
             console.log(obj)
