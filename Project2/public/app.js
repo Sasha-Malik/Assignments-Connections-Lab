@@ -33,6 +33,31 @@ datasets: [{
 };
 
 
+const start = () =>
+{
+   setTimeout(function()
+   {
+       confetti.start()
+   },
+   1000);
+};
+
+const stop = () =>
+{
+   setTimeout(function()
+   {
+       confetti.stop()
+   },
+   3000);
+};
+
+
+function spawnconfetti()
+{
+    start();
+    stop();
+}
+
 
 const config = {
     type: 'bar',
@@ -153,9 +178,16 @@ window.addEventListener('load', ()=> {
         socket.emit('poll',pollObj);
         console.log(pollobjJSON);
         showPoll(courseName);
+        spawnconfetti();
+        openpopup();
+    })
+
+    let popupclosebtn= document.querySelector('.popupclosebtn');
+
+    popupclosebtn.addEventListener('click',()=> {
+        closepopup();
     })
   
-
 });
  
 function addMessage( message){
@@ -266,5 +298,19 @@ function showPoll(courseName)
 
         console.log(chartdata.datasets[0].data);
     })
+}
+
+
+function openpopup()
+{
+    let popupwindow = document.querySelector('.Thankyoupopup');
+    popupwindow.classList.add("open-popup");
+
+}
+
+function closepopup()
+{
+    let popupwindow = document.querySelector('.Thankyoupopup');
+    popupwindow.classList.remove("open-popup");
 }
 
