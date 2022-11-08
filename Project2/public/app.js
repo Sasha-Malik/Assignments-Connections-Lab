@@ -68,7 +68,6 @@ window.addEventListener('load', ()=> {
     });
 
 
-
     fetch('/courses')
     .then(res => res.json())
     .then(data => {

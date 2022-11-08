@@ -6,7 +6,7 @@ let Datastore = require("nedb");
 let db = new Datastore("course.db");
 let db2 = new Datastore("poll.db");
 
-let courseList = ["a","Algorithms","Data Structures","Calculus","Markets","Connections Lab","Linear Algebra"];
+let courseList = ["Algorithms","Data Structures","Calculus","Markets","Connections Lab","Linear Algebra","Intro to CS","Math-1000","Intro to Logic","Discrete Math","FYWS","Mutivariable Calculus","Data and Society","Data Analysis","Computer Networks","Operating Systems","Computer System Organization"];
 
 db.loadDatabase();
 db2.loadDatabase();
