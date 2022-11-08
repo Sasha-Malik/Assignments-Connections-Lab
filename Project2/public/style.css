@@ -1,24 +1,30 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
 body{
     height: 100vh;
     background-color: rgb(239, 239, 239);
 }
 .mainContainer{
     height: 1600px;
-    display: flex;
+    display: block;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 100px;  
 }
 
 .header{
     background-color: rgb(190, 190, 190);
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
     font-size: 34px;
-    font-weight: bold;
-    justify-content: left;
-    padding : 30px;
+    font-weight: 15px;
+    justify-content: center;
+    padding : 10px;
 }    
    
 .search{
@@ -48,7 +54,7 @@ body{
 }
 
 .courseContainer{
-    height: 700px;
+    height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,19 +62,20 @@ body{
 }
 
 .courseWindow{
-    height: 600px;
+    height: 1000px;
     width: 1000px;
     display: flex;
-    flex-wrap: wrap;
-    padding:50px;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* padding:50px; */
     gap:40px;
-    overflow: scroll;
     border-radius: 8px;
+   
 }
 
 .course{
     height: 200px;
-    width: 200px;
+    width: 1000px;
     border-radius: 8px;
     display: flex;
     background-color: lightcoral;
@@ -92,7 +99,7 @@ body{
 .courseHeading{
     font-size: 40px;
     font-weight: bold;
-    padding: 20px;
+    padding: 10px;
     height: 100px;
     width: 100vh;
     display: flex;

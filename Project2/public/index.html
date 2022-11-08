@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Search</title>
     <link rel = "stylesheet" href = "style.css">
+   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
     <script src="socket.io/socket.io.js"></script>
     <script src = "app.js"></script>
+
   
 </head>
 <body>
@@ -43,23 +44,23 @@
                 <div class ="sliders">
                     <div class="pollslider">
                         <h4>Workload :</h4>
-                        <input type="range" min="0" max="100" value="50" name="Easy" id="workload">
+                        <input type="range" min="0" max="100" value="0" name="Easy" id="workload">
                     </div>
                     <div class="pollslider">
                         <h4>Grading :</h4>
-                        <input type="range" min="0" max="100" value="50" id="grading">
+                        <input type="range" min="0" max="100" value="0" id="grading">
                     </div>
                     <div class="pollslider">
                         <h4>Exams :</h4>
-                        <input type="range" min="0" max="100" value="50" id="exams">
+                        <input type="range" min="0" max="100" value="0" id="exams">
                     </div>
                     <div class="pollslider">
                         <h4>Content :</h4>
-                        <input type="range" min="0" max="100" value="50" id="content">
+                        <input type="range" min="0" max="100" value="0" id="content">
                     </div>
                     <div class="pollslider">
                         <h4>Professor :</h4>
-                        <input type="range" min="0" max="100" value="50" id="professor">
+                        <input type="range" min="0" max="100" value="0" id="professor">
                     </div>
                     <input class="pollsubmitbtn" type="submit" value="Submit"/>
                 </div>
@@ -107,63 +108,6 @@
         </div>
         
 
-    </div>  
-   
-   
+    </div>     
 </body>
-
-<script>
-    const labels = [
-      'Very Easy',
-      'Easy',
-      'Average',
-      'Hard',
-      'Very Hard',
-    ];
-  
-    const data = {
-  labels: labels,
-  datasets: [{
-    label: 'Very Easy',
-    data: [65, 59, 80, 81, 56],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-    ],
-    borderColor: [
-      'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-    ],
-    borderWidth: 1
-  }]
-};
-  
-const config = {
-  type: 'bar',
-  data: data,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  },
-};
-  </script>
-
-<script>
-    const myChart1 = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-
-    console.log(window.location.pathname);
-    
-</script>
 </html>
