@@ -180,12 +180,19 @@ window.addEventListener('load', ()=> {
         showPoll(courseName);
         spawnconfetti();
         openpopup();
+        closeslidercontainer();
     })
 
     let popupclosebtn= document.querySelector('.popupclosebtn');
+    let pollsliderscontainer = document.querySelector('.sliderscontainer');
+    let pollopenbutton  = document.querySelector('.callpollpopup');
 
     popupclosebtn.addEventListener('click',()=> {
         closepopup();
+    })
+
+    pollopenbutton.addEventListener('click',()=> {
+        openslidercontainer();
     })
   
 });
@@ -312,5 +319,19 @@ function closepopup()
 {
     let popupwindow = document.querySelector('.Thankyoupopup');
     popupwindow.classList.remove("open-popup");
+}
+
+
+function openslidercontainer()
+{
+    let sliderspopup = document.querySelector('.sliderscontainer');
+    sliderspopup.classList.add("sliderscontainer-open");
+
+}
+
+function closeslidercontainer()
+{
+    let sliderspopup = document.querySelector('.sliderscontainer');
+    sliderspopup.classList.remove("sliderscontainer-open");
 }
 
