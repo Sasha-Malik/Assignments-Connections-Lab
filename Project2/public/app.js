@@ -11,26 +11,28 @@ const labels = [
 const chartdata = {
 labels: labels,
 datasets: [{
-  label: 'Very Easy',
-  data: [0, 0, 0, 0, 0],
-  backgroundColor: 
-  [
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(255, 159, 64, 0.2)',
-    'rgba(255, 205, 86, 0.2)',
-    'rgba(75, 192, 192, 0.2)',
-    'rgba(54, 162, 235, 0.2)',
-  ],
-  borderColor: [
-    'rgb(255, 99, 132)',
-    'rgb(255, 159, 64)',
-    'rgb(255, 205, 86)',
-    'rgb(75, 192, 192)',
-    'rgb(54, 162, 235)',
-  ],
-  borderWidth: 1
+label: ["Ignore"],
+data: [0, 0, 0, 0, 0],
+backgroundColor: 
+[
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 159, 64, 0.2)',
+'rgba(255, 205, 86, 0.2)',
+'rgba(75, 192, 192, 0.2)',
+'rgba(54, 162, 235, 0.2)',
+],
+borderColor: [
+'rgb(255, 99, 132)',
+'rgb(255, 159, 64)',
+'rgb(255, 205, 86)',
+'rgb(75, 192, 192)',
+'rgb(54, 162, 235)',
+],
+borderWidth: 1
 }]
 };
+
+
 
 
 const start = () =>
@@ -63,6 +65,13 @@ const config = {
     type: 'bar',
     data: chartdata,
     options: {
+      plugins:{
+          legend:{
+              display:false
+          }
+
+      },
+     
       scales: {
         y: {
           beginAtZero: true
@@ -70,6 +79,8 @@ const config = {
       }
     },
   };
+
+ 
 
 socket.on('connect', function() {
     console.log("Connected");
@@ -91,7 +102,7 @@ window.addEventListener('load', ()=> {
     socket.on( 'sdata' , (data)=> {
         addMessage(data.comment);
     });
-
+    //myChart.defaults.global.legend.display = false
 
     fetch('/courses')
     .then(res => res.json())
@@ -187,12 +198,16 @@ window.addEventListener('load', ()=> {
     let pollsliderscontainer = document.querySelector('.sliderscontainer');
     let pollopenbutton  = document.querySelector('.callpollpopup');
 
+    let crossbutton = document.querySelector('.crossbtn');
+
     popupclosebtn.addEventListener('click',()=> {
         closepopup();
     })
-
     pollopenbutton.addEventListener('click',()=> {
         openslidercontainer();
+    })
+    crossbutton.addEventListener('click',()=> {
+        closeslidercontainer();
     })
   
 });
