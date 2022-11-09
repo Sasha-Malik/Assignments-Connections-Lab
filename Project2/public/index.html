@@ -26,7 +26,7 @@
     <div class = "mainContainer">
 
         <div class = "header">
-            <div class = "heading"> Course Search</div>
+            <a href="#" onclick="window.location.reload(true);" class = "heading"> Course Search</a>
         </div>
         <div class = "search">
             <form class = "textBox" id = "form">
@@ -56,7 +56,7 @@
 
             <input class="callpollpopup" type="submit" value="Submit a Poll"/>
            
-            <div class = "commentContainer">
+            <div class = "commentContainer" id = "containerID">
                 <div class = "comment">this class is blowing my mind</div>
             </div>
 
@@ -72,8 +72,15 @@
     
         <div class="sliderscontainer">
 
-            <img src="poll.png" class="polllogo">
-            <img src="cross.png"class="crossbtn">
+            
+           
+            <div class = "closeButtonContainer">
+                <div class = "imageContainer">
+                    <img src="poll.png" class="polllogo">
+                </div>  
+                <button class = "closeButton"> X </button>
+            </div>
+          
              <div class ="sliders">
             <div class="pollslider">
                 <h4>Workload :</h4>

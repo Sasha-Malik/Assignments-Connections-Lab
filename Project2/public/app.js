@@ -90,7 +90,14 @@ socket.on('connect', function() {
 let myChart;
 
 window.addEventListener('load', ()=> {
- 
+
+    let globalText = "";
+
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+    window.history.go(1);
+    };
+
 
     let chart = document.getElementById("myChart").getContext("2d");
     myChart = new Chart(
@@ -100,7 +107,13 @@ window.addEventListener('load', ()=> {
     let courseName = "";
 
     socket.on( 'sdata' , (data)=> {
-        addMessage(data.comment);
+        if(data.comment == globalText){
+            addMyMessage(data.comment);
+        }
+
+        else{
+            addMessage(data.comment);
+        }
     });
     //myChart.defaults.global.legend.display = false
 
@@ -154,10 +167,14 @@ window.addEventListener('load', ()=> {
     let button = document.querySelector('.btnComment');
     button.addEventListener('click',()=>{
 
+            updateScroll();
+
             let text = document.getElementById("textValComment");
 
             if(text.value != "")
             { 
+                globalText = text.value;
+
                 let commentObj = {
                 "courseName" : courseName,
                 "comment" : text.value,
@@ -198,7 +215,7 @@ window.addEventListener('load', ()=> {
     let pollsliderscontainer = document.querySelector('.sliderscontainer');
     let pollopenbutton  = document.querySelector('.callpollpopup');
 
-    let crossbutton = document.querySelector('.crossbtn');
+    let crossbutton = document.querySelector('.closeButton');
 
     popupclosebtn.addEventListener('click',()=> {
         closepopup();
@@ -217,6 +234,16 @@ function addMessage( message){
     let elem = document.createElement('div');
         elem.innerHTML = message;
         elem.classList.add('comment');
+
+        let container = document.querySelector('.commentContainer');
+        container.appendChild(elem);
+}
+
+function addMyMessage( message){
+
+    let elem = document.createElement('div');
+        elem.innerHTML = message;
+        elem.classList.add('comment1');
 
         let container = document.querySelector('.commentContainer');
         container.appendChild(elem);
@@ -348,5 +375,10 @@ function closeslidercontainer()
 {
     let sliderspopup = document.querySelector('.sliderscontainer');
     sliderspopup.classList.remove("sliderscontainer-open");
+}
+
+function updateScroll(){
+    var element = document.getElementById("containerID");
+    element.scrollTop = element.scrollHeight;
 }
 
