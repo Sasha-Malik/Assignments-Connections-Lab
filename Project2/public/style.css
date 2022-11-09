@@ -56,9 +56,6 @@ body{
     padding-left : 15px;
 }
 
-
-
-
 .btn{
     height: 47px;
     width: 85px;
@@ -68,6 +65,10 @@ body{
     color:#fffffe;
     font-size: 15px;
     font-weight: 500;
+    transition: background-color 0.3s; 
+}
+.btn:hover { 
+    background-color: #9d53f2; 
 }
 
 .courseContainer{
@@ -102,11 +103,10 @@ body{
     flex-wrap: wrap;
     padding:60px;
     gap:40px;
-    border-radius: 13px;
+    border-radius: 8px;
     overflow: scroll;
     justify-content: center;
     background-color: #16161a;
-
 }
 
 .course{
@@ -114,25 +114,32 @@ body{
     width: 200px;
     border-radius: 10px;
     display: flex;
-    background-color: #7f5af0;
-    font-weight: 520;
+    background-color: #9d53f2; 
+    border-color: #9d53f2;
+    font-weight: 100;
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    border-color: #7f5af0;
-    color:#1f1135;
     color:#fffffe;
     padding: 10px;
+    transition: background-color 0.3s; 
+    opacity: 0.8; 
+} 
+.course:hover { 
+    background-color: #7f5af0;
+    background-color : #b07bec;
+
 }
 
 
 .eachContainer{
-    height: 700px;
+    height: 1500px;
     /*display: flex;*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
+    background-color: #242629;
 }
 
 .courseHeading{
@@ -145,11 +152,14 @@ body{
     align-items: center;
     justify-content: center;
     margin: 20px;
+    color: #fffffe;
 }
+
+/* poll box  */
 
 .sliderscontainer{
     width: 400px;
-    background-color: rgb(191, 191, 191, 0.2);
+    background-color: rgb(26 24 24 / 92%);
     border-radius: 6px;
     position: absolute;
     top: 50%;
@@ -192,17 +202,23 @@ body{
 }
 
 .callpollpopup{
-    width: 200px;
+    width: 150px;
     margin: 50px 50px;
     padding: 10px 0px;
-    background-color: #6fd649;
-    border: 0;
     outline: none;
     cursor: pointer;
-    font-size: 22px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 19px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    background-color: #7f5af0;
+    border-color: #7f5af0;
+    border-radius: 6px;
+    color: #fffffe;
+    font-weight: 100;
+    transition: background-color 0.3s;
+    border: 0;
+}
+.callpollpopup:hover { 
+    background-color: #9d53f2; 
 }
 
 .pollslider h4{
@@ -212,34 +228,120 @@ body{
 .pollContainer{
     height: 600px;
     width: 1000px;
-    border:2px solid rgb(191, 191, 191);
     display: flex;
     flex-direction: column;
     padding:50px;
     gap:20px;
     overflow: scroll;
     border-radius: 8px;
+    background-color: #16161a;
+    align-items: center;
+    justify-content: center;
 }
+
+.Thankyoupopup{
+    width: 400px;
+    background-color: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px 30px;
+    columns: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.Thankyoupopup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.Thankyoupopup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popupclosebtn{
+    background-color: #7f5af0;
+    transition: background-color 0.3s;
+    color: #fffffe; 
+}
+
+.popupclosebtn:hover{
+    background-color: #9d53f2; 
+}
+
+.Thankyoupopup input{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0px;
+    background-color: #7f5af0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+}
+
+.pollsubmitbtn{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0px;
+    background-color: #7f5af0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s; 
+    color: #fffffe; 
+
+}
+
+.pollsubmitbtn:hover { 
+    background-color: #9d53f2; 
+}
+
+
+/* comment box  */
 
 .commentContainer{
     height: 600px;
     width: 1000px;
-    border:2px solid rgb(191, 191, 191);
     display: flex;
     flex-direction: column;
     padding:50px;
     gap:20px;
     overflow: scroll;
     border-radius: 8px;
+    background-color: #16161a;
 }
 
+.commentContainer > :first-child {
+    margin-top: auto
+}
 .comment{
     height: 30px;
-    min-width: 100px;
     width: fit-content;
-    border-radius: 8px;
-    background-color: rgb(199, 199, 199);
-    border: 2px solid white;
+    border-radius: 18px;
+    background-color: #9d53f2; 
+    color: #fffffe;
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
@@ -267,17 +369,35 @@ body{
 
 .textValueComment{
     width: 600px;
-    height: 40px;   
+    height: 40px; 
+    background-color: #242629;
+    border-radius: 6px;
+    border: 1px solid grey;
+    box-shadow: none;
+    color: #fffffe;
+    padding-left : 15px;  
 }
 
 .btnComment{
     height: 40px;
     width: 90px;
+    background-color: #7f5af0;
+    border-color: #7f5af0;
+    border-radius: 6px;
+    color:#fffffe;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s; 
 }
+
+.btnComment:hover { 
+    background-color: #9d53f2; 
+}
+
 
 .footer{
     background-color: #16161a;
-    height: 400px;
+    height: 200px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -321,66 +441,3 @@ body{
     color: #fffffe;
 }
 
-.Thankyoupopup{
-    width: 400px;
-    background-color: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px 30px;
-    columns: #333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-}
-
-.open-popup {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(1);
-}
-
-
-.Thankyoupopup h2{
-  font-size: 38px;
-  font-weight: 500;
-  margin: 30px 0 10px;
-}
-.Thankyoupopup img{
-    width: 100px;
-    margin-top: -50px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-.Thankyoupopup input{
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0px;
-    background-color: #6fd649;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.pollsubmitbtn{
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0px;
-    background-color: #6fd649;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-}
