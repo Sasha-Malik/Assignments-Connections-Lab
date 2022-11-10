@@ -346,12 +346,13 @@ function showPoll(courseName)
 
         average_data = [a_wpoll,a_gpoll,a_epoll,a_cpoll,a_ppoll];
         chartdata.datasets[0].data = average_data;
-        document.querySelector('.votecounter').innerHTML = totaluserpoll+" student voted";
+        document.querySelector('.votecounter').innerHTML = totaluserpoll+" students voted";
 
         myChart.update();
 
-
         console.log(chartdata.datasets[0].data);
+
+    
     })
 }
 
