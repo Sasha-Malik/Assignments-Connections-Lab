@@ -68,6 +68,11 @@ const config = {
       plugins:{
           legend:{
               display:false
+          },
+          title :{
+              display:true,
+              text: 'Student Votes',
+              borderColor: '#ffff'
           }
 
       },
@@ -341,6 +346,7 @@ function showPoll(courseName)
 
         average_data = [a_wpoll,a_gpoll,a_epoll,a_cpoll,a_ppoll];
         chartdata.datasets[0].data = average_data;
+        document.querySelector('.votecounter').innerHTML = totaluserpoll+" student voted";
 
         myChart.update();
 

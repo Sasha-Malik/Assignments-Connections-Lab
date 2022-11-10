@@ -147,6 +147,13 @@ body{
     background-color: #242629;
 }
 
+.votecounter{
+    margin-top: 15px;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
 .courseHeading{
     font-size: 40px;
     font-weight: bold;
@@ -169,7 +176,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
+    transform: translate(-50%,80%) scale(0.1);
     text-align: center;
     padding: 0 30px 30px 30px;
     columns: #333;
@@ -179,8 +186,8 @@ body{
 
 .sliderscontainer-open{
     visibility: visible;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(1);
+    top: 135%;
+    transform: translate(-50%,-80%) scale(1);
 }
 
 .polllogo {
@@ -217,7 +224,7 @@ body{
 
 .callpollpopup{
     width: 150px;
-    margin: 50px 50px;
+    margin: 20px 50px;
     padding: 10px 0px;
     outline: none;
     cursor: pointer;
@@ -311,7 +318,7 @@ body{
 
 .open-popup {
     visibility: visible;
-    top: 50%;
+    top: 110%;
     transform: translate(-50%,-50%) scale(1);
 }
 
