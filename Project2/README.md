@@ -54,9 +54,16 @@ Socket.io was used so that the comments are displayed in real time, making it st
 
 ## Key Challenges
 
+1. Working with a single page web application, this made it harder as the previous button on the browser would not return the user to the home page instead it would take them outside the application. 
+2. There was an issue while setting up multiple pages, when a user goes to a different page their socket connection disconnects and they were just able to reconnect under a different connection.
+3. When the users are allowed to add courses, the user can add anything as a course even if it isn't one. This was done so that the admin does not have to keep checking if new courses have opened.
+
 ## Next Steps
 
-verification process for logging in
+1. Placing majors as cards on the first page and then getting the courses of that major by clicking on that card.
+2. Setting up a filter search for courses.
+3. Sometimes there is confusion regarding which professor the users are talking about, each user will have an option to enter the name of the professor and their comment will display that name for other users to identify it.
+4. A verification process for logging in.
 
 
 ## Avinash
