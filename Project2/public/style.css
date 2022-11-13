@@ -145,12 +145,13 @@ body{
     align-items: center;
     display: none;
     background-color: #242629;
+    gap:50px;
 }
 
 .votecounter{
     margin-top: 15px;
-    color: #ffff;
-    font-size: 20px;
+    color:grey;
+    font-size: 15px;
     font-weight: lighter;
 }
 
@@ -165,6 +166,7 @@ body{
     justify-content: center;
     margin: 20px;
     color: #fffffe;
+    margin-top: 50px;
 }
 
 /* poll box  */
@@ -239,6 +241,7 @@ body{
     font-weight: 100;
     transition: background-color 0.3s;
     border: 0;
+    margin-bottom: -20px;
 }
 .callpollpopup:hover { 
     background-color: #9d53f2; 
@@ -289,7 +292,7 @@ body{
 }
 
 .pollContainer{
-    height: 600px;
+    height: 450px;
     width: 1000px;
     display: flex;
     flex-direction: column;
@@ -385,6 +388,21 @@ body{
 
 /* comment box  */
 
+.subHeadingContainer{
+
+    width: 990px;
+    margin-top: 40px;
+    margin-bottom: -30px;
+}
+
+.subHeading{
+
+    font-size: 31px;
+    font-weight: 800;
+    color: #fffffe;
+    margin-bottom: 20px;
+}
+
 .commentContainer{
     height: 600px;
     width: 1000px;
@@ -406,28 +424,25 @@ body{
     border-radius: 18px;
     background-color: #9d53f2; 
     color: #fffffe;
-    padding: 5px;
+    padding: 12px;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
     align-items: center;
-    padding-top: 12px;
-    padding-top: 12px;
 }
 
 .comment1{
-    height: 30px;
+    height: fit-content;
     width: fit-content;
     border-radius: 18px;
     background-color: #9d53f2; 
     color: #fffffe;
-    padding: 5px;
+    padding: 12px;
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
     align-items: center;
-    position: relative;
-    left:940px;
+    margin-left: auto;
 }
 
 .searchComment{
