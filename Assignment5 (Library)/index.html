@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <meta name="description">
+
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+   
+  </head>
+
+  <body>
+
+    <a-scene environment="preset: forest">
+
+ 
+      <a-cylinder id = "c1" position="1 0.75 -5" radius="0.5" height="1.5" color="#EAFAF1"
+     event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+     event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+       <a-text id="cylinderText" value="Course Search" align = "center" color="white" visible="false" position="0 1.55 0.55"
+         geometry="primitive: plane; width: 1.95" material="color: white  ">
+       </a-text>
+     </a-cylinder>
+ 
+     <a-cylinder id = "c2" position="4 0.75 -5" radius="0.5" height="1.5" color="#EAFAF1"
+     event-set__enter="_event: mouseenter; _target: #cylinderText2; visible: true"
+     event-set__leave="_event: mouseleave; _target: #cylinderText2; visible: false">
+       <a-text id="cylinderText2" value="Compatibility Test" align = "center" color="white" visible="false" position="0 1.55 0.55"
+         geometry="primitive: plane; width: 1.95" material="color: white ">
+       </a-text>
+     </a-cylinder>
+ 
+     <a-cylinder id = "c3" position="-2.5 0.75 -5" radius="0.5" height="1.5" color="#EAFAF1"
+     event-set__enter="_event: mouseenter; _target: #cylinderText3; visible: true"
+     event-set__leave="_event: mouseleave; _target: #cylinderText3; visible: false">
+       <a-text id="cylinderText3" value="Etch-a-sketch" align = "center" color="white" visible="false" position="0 1.55 0.55"
+         geometry="primitive: plane; width: 1.95" material="color: white ">
+       </a-text>
+     </a-cylinder>
+
+     <a-light type = "spot" intensity = 1.1 position = "0.5 0 -1" penumbra = 0.5 distance = 7></a-light>
+
+ 
+     <a-box id = "b1" position="1 1.75 -11" height="8.5" width="11" color="#F7DC6F" 
+     event-set__enter="_event: mouseenter; _target: #cylinderText4; visible: true"
+     event-set__leave="_event: mouseleave; _target: #cylinderText4; visible: false">
+       <a-text id="cylinderText4"   value="CONNECTIONS-LAB" align = "center" color="white" visible="false" position="0 1.55 0.85"
+         geometry="primitive: plane;  width: -1 " material="color: white " scale ="3 3 3">
+       </a-text>
+     </a-cube>  
+
+     <a-light type = "spot" intensity = 1 position = "0 -2.7 5" target = "#b1" penumbra = 0.1 angle = 35  distance = 9></a-light>
+
+
+     <a-box id = "b2" position="6.5 -1 7.5" height="2" width="5" depth = "0.2" color="##EAFAF1">
+       <a-text id="cylinderText4" value= "Hover on the poles to see website names, click on the poles to visit the websites, Use the arrow keys to move" align = "center" color="white" visible="true" position="0 0.3 0.25"
+         geometry="primitive: plane; width:-1 " material="color: white">
+       </a-text>
+     </a-cube>  
+
+     <a-light type = "spot" intensity = 1.2 position = "0 -2 1" target = "#b2" penumbra = 0.2 angle = 40  distance = 6></a-light>
+     
+      <a-camera position="-5.5 1.3 7">
+        <a-cursor color="#FAFAFA"></a-cursor>
+      </a-camera>
+    </a-scene>
+
+
+    <script src = "app.js"></script>
+  </body>
+</html>
