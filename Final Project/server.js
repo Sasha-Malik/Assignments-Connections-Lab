@@ -12,6 +12,7 @@ app.use(cors(
     }
 ));
 
+
 let Datastore = require("nedb");
 
 let db = new Datastore("course.db");
@@ -67,50 +68,7 @@ app.get('/comments', (req, res) => {
     });
 });
 
-/*
 
-app.post('/videoPost', (req, res) => {
-    console.log(req);
-    console.log(req.body);
-    db3.insert(polldata, (err, ) => {
-        if (err) {
-            console.log(err.message);
-        }
-        //console.log(newDoc);
-    });
-
-    res.send({ task: "success" });
-})
-
-
-
-app.get('/video', (req, res) => {
-    let c = req.query.selectedCourse;
-
-    let videoObject = {
-        "course": req.query.selectedCourse,
-        "online": 2
-    }
-
-    db3.insert(videoObject, (err, newDoc) => {
-        //console.log(newDoc);
-        console.log(err);
-    });
-    
-    db3.find({ courseName: c }, function (err, docs) {
-        if (err) {
-            res.json({ task: "task failed" })
-        }
-        else {
-            console.log(docs);
-            let obj = { videoDetails: docs };
-            res.json(obj);
-        }
-    });
-    //res.json({ task: "task failed" })
-});
-
-*/
 
 app.get('/polls', (req, res) => {
 

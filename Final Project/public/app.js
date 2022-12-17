@@ -616,8 +616,3 @@ window.addEventListener('load', () => {
 });
 
 
-
-
-// This is a test of the p5LiveMedia webrtc library and associated service.
-// Open this sketch up 9 times to send video back and forth
-

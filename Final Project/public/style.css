@@ -36,9 +36,6 @@
 }
 #video{
     max-width:fit-content;
-    /*display: none;*/
-    /*position: relative;*/
-    /*top:-200px;*/
     display: none;
     justify-content: center;
     align-items: center;
