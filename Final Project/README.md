@@ -58,6 +58,7 @@ Socket.io was used so that the comments are displayed in real time, making it st
 1. Tired of scrolling through facebook groups to find reviews for specific courses.
 2. Needed a way to visualize course statistics for streamlined decision making.
 3. Anynomous comments/reviews so that the users can openly share thier views about the courses/professors.
+4. A way to meet with classmates from various courses to collaborate together.
 
 ## Key Challenges
 
